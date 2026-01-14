@@ -3,8 +3,6 @@ import { GridContext } from "./context/GridContext"
 import Grid from "./components/Grid"
 
 function App() {
-  const gridData = useContext(GridContext)
-
   return (
     <div>
       <Grid></Grid>
