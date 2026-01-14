@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+    color: white;
+}
+.cell{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 1px solid white;
+}
