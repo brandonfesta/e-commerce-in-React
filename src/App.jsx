@@ -1,11 +1,15 @@
 import { useContext } from "react"
-import { GridContext } from "./context/GridContext"
-import Grid from "./components/Grid"
 
 function App() {
+  let gridData = useContext(CellsContext)
+
+  function changeTerrain(id){
+    
+  }
+
   return (
     <div>
-      <Grid></Grid>
+      <Grid changeTerrain={changeTerrain}></Grid>
     </div>
   )
 }
