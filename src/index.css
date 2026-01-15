@@ -1,26 +1,4 @@
 body{
-    background-color: black;
-    color: white;
-}
-.cell{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border: 1px solid white;
-}
-.cell:hover{
-    cursor: pointer;
-    filter: opacity(70%);
-}
-.blue{
-    background-color: aqua;
-}
-.brown{
-    background-color: burlywood;
-}
-.yellow{
-    background-color: yellow;
-}
-.green{
-    background-color: green;
+    background-color: grey;
+    font-size: xx-large;
 }
