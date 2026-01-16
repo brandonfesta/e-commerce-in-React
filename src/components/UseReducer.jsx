@@ -1,4 +1,6 @@
-import { useReducer, useRef } from "react";
+import { useEffect, useReducer, useRef } from "react";
+
+let initialState = {checked: false}
 
 function reducer(state, action){
     switch(action.type){
@@ -13,7 +15,13 @@ function reducer(state, action){
 }
 
 export default function UseReducer(){
-    const [state, dispatch] = useReducer(reducer, {checked: false})
+
+    const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem("checkToggle")) || initialState)
+
+    useEffect(() => {
+        localStorage.setItem("checkToggle", JSON.stringify(state))
+    }, [state])
+    
 
     return (
         <div>
