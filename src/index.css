@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    padding: 0;
 }
 .page-container{
     background-color: white;
@@ -46,6 +47,49 @@ header button:hover{
 
 main{
     grid-area: main;
+}
+.news{
+    margin: 2rem;
+    display: grid;
+    grid-template-areas: 
+    "news business";
+    gap: 2rem;
+}
+.news-container{
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid lightgray;
+    padding: 25px;
+    border-radius: 7px;
+    grid-area: news;
+}
+.business-news-container{
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid lightgray;
+    padding: 25px;
+    border-radius: 7px;
+    grid-area: business;
+}
+article{
+    border: 1px solid lightgrey;
+    padding: 2rem;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+article img{
+    width: 400px;
+    height: 200px;
+    border-radius: 7px;
+    object-fit: cover;
 }
 
 
