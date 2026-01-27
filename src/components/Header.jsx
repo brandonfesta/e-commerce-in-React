@@ -3,6 +3,7 @@ import HeaderButton from "./buttons/HeaderButton";
 import { routerPaths } from "../features/header/navigationSlice";
 
 export default function Header(){
+
    return (
       <header className="header">
         <h1>Discovery</h1>

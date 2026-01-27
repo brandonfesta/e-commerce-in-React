@@ -5,7 +5,6 @@ export const routerPaths = {
     science: "Science",
     health: "Health",
     about: "About"
-
 }
 
 export const navigationSlice = createSlice({

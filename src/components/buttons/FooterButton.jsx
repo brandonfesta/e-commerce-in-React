@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
 
-export default function HeaderButton({content}){
+export default function FooterButton({content}){
     const navigate = useNavigate()
 
     function redirect(content){

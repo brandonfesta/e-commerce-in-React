@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import NewsArticle from "./contentsComponents/NewsArticle"
 import CurrencyContainer from "./contentsComponents/CurrencyContainer"
+import EnteratinmentContainer from "./contentsComponents/EntertainmentContainer"
 const KEY = "f09c60c908c1450daa8e00ab65dd1f8c"
 import { useEffect, useState } from "react"
 
@@ -8,6 +9,7 @@ export default function News(){
     const [news, setNews] = useState([])
     const [businessNews, setBusinessNews] = useState([])
     const [currencies, setCurrencies] = useState([])
+    const [entertainment, setEntertainment] = useState([])
 
     useEffect(() => {
         async function getGeneralData(){
@@ -28,6 +30,12 @@ export default function News(){
             });
             setCurrencies(arrayResults)
         }
+        async function getEntertainmentData(){
+            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey="+KEY)
+            const data = await response.json()
+            setEntertainment(data.articles)
+        }
+        getEntertainmentData()
         getCurrenciesData()
         getBusinessData()
         getGeneralData()
@@ -49,6 +57,18 @@ export default function News(){
                 <h2>World Currencies from USD</h2>
                 <div className="currencies-articles">
                     {currencies.length === 0 ? (<p>loading...</p>) : (currencies.map((article) => (<CurrencyContainer data={article}></CurrencyContainer>) ) )}
+                </div>
+            </div>
+
+            <div className="text-container">
+                <h2>You dose of daily news here</h2>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, tempora culpa, esse error quam nam repellendus eligendi vitae consequatur nesciunt fugit, aspernatur harum asperiores quasi! Optio exercitationem deleniti asperiores! Deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo provident, sequi velit vel doloribus aliquam neque. Vero laboriosam dignissimos architecto dolorem fugiat quia dolores, culpa dolore aliquid aliquam! Soluta, tempora! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, exercitationem? At, maxime aut maiores quia odio quas minus deserunt eveniet! Qui sed, debitis laborum accusantium unde iusto commodi quia error.</h3>
+            </div>
+
+            <div className="entertainment-container">
+                <h2>Enteratinment</h2>
+                <div className="entertainment-articles">
+                    {entertainment.length === 0 ? (<p>loading...</p>) : (entertainment.map((article) => (<EnteratinmentContainer data={article}></EnteratinmentContainer>) ))}
                 </div>
             </div>
         </div>
