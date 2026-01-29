@@ -65,7 +65,24 @@ main{
     "nasa nasa";
     gap: 2rem;
 }
+.health{
+    margin: 2rem;
+    display: grid;
+    gap: 2rem;
+}
 .news-container{
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid lightgray;
+    padding: 25px;
+    border-radius: 7px;
+    grid-area: news;
+    background-color: #cdcdcd38;
+}
+.health-container{
     display: grid;
     gap: 0.5rem;
     padding: 1rem;
