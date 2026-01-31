@@ -2,7 +2,11 @@ import { TiThMenu  } from "react-icons/ti";
 import HeaderButton from "./buttons/HeaderButton";
 import { routerPaths } from "../features/header/navigationSlice";
 
-export default function Header(){
+export default function Header({setVisible}){
+
+   function openLateral(){
+      setVisible(true)
+   }
 
    return (
       <header className="header">
@@ -13,7 +17,7 @@ export default function Header(){
             <li><HeaderButton content={routerPaths.health}/></li>
             <li><HeaderButton content={routerPaths.about}/></li>
         </ul>
-        <button className="menu-btn"><TiThMenu></TiThMenu></button>
+        <button className="menu-btn" onClick={() => openLateral()}><TiThMenu></TiThMenu></button>
       </header>
    )
 };
