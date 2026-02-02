@@ -4,6 +4,7 @@ export const routerPaths = {
     news: "News",
     science: "Science",
     health: "Health",
+    saved: "saved",
     about: "About"
 }
 

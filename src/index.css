@@ -311,6 +311,14 @@ footer a:hover{
     gap: 2rem;
 }
 
+.saved{
+    padding: 2rem 20rem;
+}
+.saved-art{
+    border: 1px solid #CDCDCD;
+    padding: 1rem ;
+}
+
 
 
 /* @media (max-width: 700px) {
