@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 const KEY = "f09c60c908c1450daa8e00ab65dd1f8c"
 import { useEffect, useState } from "react"
-import ScienceArticle from "./contentsComponents/ScienceArticle"
+import NewsArticle from "./contentsComponents/NewsArticle"
 import NasaArticle from "./contentsComponents/NasaArticle"
 
 
@@ -37,12 +37,12 @@ export default function Science(){
       <div className="science">
         <div className="science-container">
             <h2>Science</h2>
-            {science.length === 0 ? (<p>loading...</p>) : (science.map((article) => (<ScienceArticle data={article}></ScienceArticle>) ) )}
+            {science.length === 0 ? (<p>loading...</p>) : (science.map((article) => (<NewsArticle data={article}></NewsArticle>) ) )}
          </div>
 
          <div className="technology-container">
             <h2>Techonology</h2>
-            {tech.length === 0 ? (<p>loading...</p>) : (tech.map((article) => (<ScienceArticle data={article}></ScienceArticle>) ) )}
+            {tech.length === 0 ? (<p>loading...</p>) : (tech.map((article) => (<NewsArticle data={article}></NewsArticle>) ) )}
          </div>
 
          <div className="nasa-container">

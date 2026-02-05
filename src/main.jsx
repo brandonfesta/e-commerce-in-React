@@ -5,12 +5,15 @@ import './index.css'
 import App from './App'
 import store from './app/store'
 import { Provider } from 'react-redux'
+import SavedContextProvider from './SavedContext'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App></App>
+        <SavedContextProvider>
+          <App></App>
+        </SavedContextProvider>
       </BrowserRouter>
     </Provider>
   </StrictMode>,

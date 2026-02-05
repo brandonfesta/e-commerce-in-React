@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import ScienceArticle from "./contentsComponents/ScienceArticle"
+import NewsArticle from "./contentsComponents/NewsArticle"
 const KEY = "f09c60c908c1450daa8e00ab65dd1f8c"
 
 export default function Health(){
@@ -19,7 +19,7 @@ export default function Health(){
       <div className="health">
          <div className="health-container">
             <h2>Health</h2>
-            {health.length === 0 ? (<p>loading...</p>) : (health.map((article) => (<ScienceArticle data={article}></ScienceArticle>) ) )}
+            {health.length === 0 ? (<p>loading...</p>) : (health.map((article) => (<NewsArticle data={article}></NewsArticle>) ) )}
          </div>
       </div>
    )

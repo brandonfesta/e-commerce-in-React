@@ -87,7 +87,7 @@ main{
     display: grid;
     gap: 0.5rem;
     padding: 1rem;
-    max-height: 500px;
+    height: 500px;
     overflow-y: auto;
     border: 1px solid lightgray;
     padding: 25px;
