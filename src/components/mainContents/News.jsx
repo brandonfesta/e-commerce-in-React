@@ -4,6 +4,12 @@ import CurrencyContainer from "./contentsComponents/CurrencyContainer"
 const KEY = "f09c60c908c1450daa8e00ab65dd1f8c"
 import { useEffect, useState } from "react"
 
+const categories = {
+    general: "general",
+    business: "business",
+    entertainment: "entertainment"
+}
+
 export default function News(){
     const [news, setNews] = useState([])
     const [businessNews, setBusinessNews] = useState([])
@@ -12,12 +18,12 @@ export default function News(){
 
     useEffect(() => {
         async function getGeneralData(){
-            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey="+KEY)
+            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category="+categories.general+"&apiKey="+KEY)
             const data = await response.json()  
             setNews(data.articles)
         }
         async function getBusinessData(){
-            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey="+KEY)
+            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category="+categories.business+"&apiKey="+KEY)
             const data = await response.json()  
             setBusinessNews(data.articles)
         }
@@ -30,7 +36,7 @@ export default function News(){
         //     setCurrencies(arrayResults)
         // }
         async function getEntertainmentData(){
-            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey="+KEY)
+            const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category="+categories.entertainment+"&apiKey="+KEY)
             const data = await response.json()
             setEntertainment(data.articles)
         }
