@@ -3,16 +3,16 @@ import { Link } from "react-router-dom"
 export default function About(){
    return (
       <div>
-         <section class="hero">
-            <div class="overlay"></div>
+         <section className="hero">
+            <div className="overlay"></div>
 
-            <div class="hero-content">
+            <div className="hero-content">
                <h1>Learn more about what we do</h1>
                <p>Everything you need to know about <b>Discovery</b></p>
             </div>
          </section>
 
-         <section class="about">
+         <section className="about">
 
             <h1>Welcome to Discovery</h1>
 
@@ -48,7 +48,7 @@ export default function About(){
 
             <p>
                Whether you are here to stay updated, to learn something new, or simply to
-               understand the world a little better, Discovery welcomes you.<br/><br /><hr /><small>---- Made by ChatGPT ;)</small>
+               understand the world a little better, Discovery welcomes you.<br/><br /><small>---- Made by ChatGPT ;)</small>
             </p>
          </section>
       </div>

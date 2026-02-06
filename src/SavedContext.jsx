@@ -1,8 +1,8 @@
-import { createContext, useState, useReducer } from "react";
+import { createContext, useState, useReducer, useEffect } from "react";
 
 export const SavedContext = createContext()
 
-const initialState = []
+const initialState =  JSON.parse(localStorage.getItem("saved")) || []
 
 function reducer(state, action){
     switch(action.type){
@@ -19,6 +19,10 @@ function reducer(state, action){
 
 export default function SavedContextProvider({children}){
     const [savedArr, dispatch] = useReducer(reducer, initialState)
+
+    useEffect(() => {
+        localStorage.setItem("saved", JSON.stringify(savedArr))
+    }, [savedArr])
 
     return(
         <SavedContext.Provider value={{savedArr: savedArr, dispatch: dispatch}}>
