@@ -16,7 +16,10 @@ export default function SavedArticle({data}){
             <h2>{data.title}</h2>
             <h4>{data.description}</h4>
             <h6>{data.publishedAt}</h6>
-            <button onClick={() => deleteArt(data.content)}>delete</button>
+            <div className="bu-li">
+                <button onClick={() => deleteArt(data.content)}>delete</button>
+                <button><a href={data.url} target="_blank">Link</a></button>
+            </div>
         </div>
         </article>
    )

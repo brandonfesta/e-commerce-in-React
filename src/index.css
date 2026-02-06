@@ -5,12 +5,17 @@ body{
 button{
     font-size: larger;
     background-color: white;
+    color: black;
     border: 1px solid lightgrey;
     padding: 0.4rem 0.9rem;
 }
 button:hover{
     background-color: #CDCDCD;
     cursor: pointer;
+}
+button a{
+    text-decoration: none;
+    color: black;
 }
 .page-container{
     background-color: white;
@@ -238,6 +243,12 @@ article img{
     height: 200px;
     border-radius: 7px;
     object-fit: cover;
+}
+
+.bu-li{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
 }
 
 .currency-article{
