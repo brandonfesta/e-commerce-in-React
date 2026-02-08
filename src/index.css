@@ -19,6 +19,7 @@ button a{
 }
 .disabled-btn{
     background-color: #CDCDCD;
+    opacity: 0.5;
 }
 .disabled-btn:hover{
     cursor: default;

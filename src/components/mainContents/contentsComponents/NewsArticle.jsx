@@ -9,7 +9,7 @@ export default function NewsArticle({data}){
    const savedArr = savedNews.savedArr
 
    useEffect(() => {
-         let isSaved = savedArr.some(item => item.url === data.url)
+         let isSaved = savedArr.some(item => item.content === data.content)
          setSaved(isSaved)
    }, [savedArr])
 
@@ -17,6 +17,10 @@ export default function NewsArticle({data}){
    function saveNews(data){
       savedNews.dispatch({type: "addItem", item: data})
       setSaved(true)
+   }
+
+   function unsave(data){
+      savedNews.dispatch({type: "delete", content: data.content})
    }
    
    return (
@@ -27,8 +31,8 @@ export default function NewsArticle({data}){
             <h4>{data.description}</h4>
             <h6>{data.publishedAt}</h6>
             <div className="bu-li">
-               {saved ? (<button className={"disabled-btn"} disabled>Save</button>) : (<button onClick={() => saveNews(data)}>Save</button>)}
-               {saved && <button>x</button>}
+               {saved ? (<button className={"disabled-btn"} disabled>Saved ✓</button>) : (<button onClick={() => saveNews(data)}>Save</button>)}
+               {saved && <button onClick={() => unsave(data)}>x</button>}
                <button><a href={data.url} target="_blank">Link</a></button>
             </div>
         </div>
