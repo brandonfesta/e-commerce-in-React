@@ -17,6 +17,12 @@ button a{
     text-decoration: none;
     color: black;
 }
+.disabled-btn{
+    background-color: #CDCDCD;
+}
+.disabled-btn:hover{
+    cursor: default;
+}
 .page-container{
     background-color: white;
     margin: 0;
