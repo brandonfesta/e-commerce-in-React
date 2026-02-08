@@ -10,6 +10,15 @@ export default function Science(){
    const [tech, setTech] = useState([])
    const [nasa, setNasa] = useState([])
 
+   const date = new Date();          // data di partenza
+   date.setDate(date.getDate() - 15);
+
+   const year = date.getFullYear();
+   const month = String(date.getMonth() + 1).padStart(2, "0");
+   const day = String(date.getDate()).padStart(2, "0");
+
+   const startingNasaDate = `${year}-${month}-${day}`;
+
    useEffect(() => {
       async function getScienceData(){
          const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey="+KEY)
@@ -24,7 +33,7 @@ export default function Science(){
       }
       getTechData()
       async function getNasaData(){
-         const response = await fetch("https://api.nasa.gov/planetary/apod?start_date=2026-01-05&end_date=2026-01-20&api_key=N42TYEWrulkPCwleleuuDi2AWa0tSgZ8pf3ZUr4W")
+         const response = await fetch("https://api.nasa.gov/planetary/apod?start_date="+startingNasaDate+"&api_key=N42TYEWrulkPCwleleuuDi2AWa0tSgZ8pf3ZUr4W")
          const data = await response.json()  
          setNasa(data)
       }
